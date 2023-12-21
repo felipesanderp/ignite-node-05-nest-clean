@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/types/optional'
 import { Comment, CommentProps } from './comment'
