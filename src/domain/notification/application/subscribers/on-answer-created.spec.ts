@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 import { OnAnswerCreated } from '@/domain/notification/application/subscribers/on-answer-created'
 import { MakeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
