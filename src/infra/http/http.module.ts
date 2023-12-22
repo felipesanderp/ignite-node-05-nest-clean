@@ -5,6 +5,7 @@ import { AuthenticateController } from './controllers/authenticate.controller'
 import { CreateQuestionController } from './controllers/create-question.controller'
 import { FetchRecentQuestionsController } from './controllers/fetch-recent-questions.controller'
 import { PrismaService } from '../prisma/prisma.service'
+import { JwtService } from '@nestjs/jwt'
 
 @Module({
   controllers: [
@@ -13,6 +14,6 @@ import { PrismaService } from '../prisma/prisma.service'
     CreateQuestionController,
     FetchRecentQuestionsController,
   ],
-  providers: [PrismaService],
+  providers: [PrismaService, JwtService],
 })
 export class HttpModule {}
