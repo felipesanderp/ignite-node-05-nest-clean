@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-import { Slug } from './value-object/slug'
+import { Slug } from './value-objects/slug'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/types/optional'
 import { AggregateRoot } from '@/core/entities/aggregate-root'
@@ -15,7 +15,7 @@ export interface QuestionProps {
   content: string
   attachments: QuestionAttachmentList
   createdAt: Date
-  updatedAt?: Date
+  updatedAt?: Date | null
 }
 
 export class Question extends AggregateRoot<QuestionProps> {

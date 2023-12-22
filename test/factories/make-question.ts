@@ -5,7 +5,7 @@ import {
   Question,
   QuestionProps,
 } from '@/domain/forum/enterprise/entities/question'
-import { Slug } from '@/domain/forum/enterprise/entities/value-object/slug'
+import { Slug } from '@/domain/forum/enterprise/entities/value-objects/slug'
 
 export function MakeQuestion(
   override: Partial<QuestionProps> = {},
