@@ -1,11 +1,14 @@
 import { Module } from '@nestjs/common'
+import { JwtService } from '@nestjs/jwt'
 
 import { CreateAccountController } from './controllers/create-account.controller'
 import { AuthenticateController } from './controllers/authenticate.controller'
 import { CreateQuestionController } from './controllers/create-question.controller'
 import { FetchRecentQuestionsController } from './controllers/fetch-recent-questions.controller'
-import { JwtService } from '@nestjs/jwt'
+
 import { DatabaseModule } from '../database/database.module'
+
+import { CreateQuestionUseCase } from '@/domain/forum/application/use-cases/create-question'
 
 @Module({
   imports: [DatabaseModule],
@@ -15,6 +18,6 @@ import { DatabaseModule } from '../database/database.module'
     CreateQuestionController,
     FetchRecentQuestionsController,
   ],
-  providers: [JwtService],
+  providers: [JwtService, CreateQuestionUseCase],
 })
 export class HttpModule {}
