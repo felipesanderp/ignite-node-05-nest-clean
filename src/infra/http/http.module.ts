@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common'
-import { JwtService } from '@nestjs/jwt'
 
 import { CreateAccountController } from './controllers/create-account.controller'
 import { AuthenticateController } from './controllers/authenticate.controller'
@@ -18,6 +17,6 @@ import { CreateQuestionUseCase } from '@/domain/forum/application/use-cases/crea
     CreateQuestionController,
     FetchRecentQuestionsController,
   ],
-  providers: [JwtService, CreateQuestionUseCase],
+  providers: [CreateQuestionUseCase],
 })
 export class HttpModule {}
