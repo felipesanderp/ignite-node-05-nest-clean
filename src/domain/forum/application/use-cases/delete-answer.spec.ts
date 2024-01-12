@@ -1,7 +1,7 @@
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { DeleteAnswerUseCase } from './delete-answer'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
-import { MakeAnswer } from 'test/factories/make-answer'
+import { makeAnswer } from 'test/factories/make-answer'
 import { NotAllowedError } from '../../../../core/errors/errors/not-allowed-error'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
 import { makeAnswerAttachment } from 'test/factories/make-answer-attachment'
@@ -21,7 +21,7 @@ describe('Delete Answer', () => {
   })
 
   it('should be able to delete a answer', async () => {
-    const newAnswer = MakeAnswer(
+    const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityId('author-1'),
       },
@@ -51,7 +51,7 @@ describe('Delete Answer', () => {
   })
 
   it('should be not be able to delete a question from another user', async () => {
-    const newAnswer = MakeAnswer(
+    const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityId('author-1'),
       },

@@ -1,5 +1,5 @@
 import { OnAnswerCreated } from '@/domain/notification/application/subscribers/on-answer-created'
-import { MakeAnswer } from 'test/factories/make-answer'
+import { makeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
 import { InMemoryQuestionAttachmentsRepository } from 'test/repositories/in-memory-question-attachments-repository'
@@ -52,7 +52,7 @@ describe('On Answer Created', () => {
     const question = makeQuestion()
     inMemoryQuestionsRepository.create(question)
 
-    const answer = MakeAnswer({ questionId: question.id })
+    const answer = makeAnswer({ questionId: question.id })
     inMemoryAnswersRepository.create(answer)
 
     await waitFor(() => {

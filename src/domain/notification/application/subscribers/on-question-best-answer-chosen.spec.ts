@@ -1,4 +1,4 @@
-import { MakeAnswer } from 'test/factories/make-answer'
+import { makeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
 import { InMemoryQuestionAttachmentsRepository } from 'test/repositories/in-memory-question-attachments-repository'
@@ -53,7 +53,7 @@ describe('On Question Best Answer Chosen', () => {
 
   it('should send a notification when question has new best answer chosen', async () => {
     const question = makeQuestion()
-    const answer = MakeAnswer({ questionId: question.id })
+    const answer = makeAnswer({ questionId: question.id })
 
     inMemoryQuestionsRepository.create(question)
     inMemoryAnswersRepository.create(answer)

@@ -1,7 +1,7 @@
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { EditAnswerUseCase } from './edit-answer'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
-import { MakeAnswer } from 'test/factories/make-answer'
+import { makeAnswer } from 'test/factories/make-answer'
 import { NotAllowedError } from '../../../../core/errors/errors/not-allowed-error'
 import { makeAnswerAttachment } from 'test/factories/make-answer-attachment'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
@@ -24,7 +24,7 @@ describe('Edit Answer', () => {
   })
 
   it('should be able to edit a answer', async () => {
-    const newAnswer = MakeAnswer(
+    const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityId('author-1'),
       },
@@ -66,7 +66,7 @@ describe('Edit Answer', () => {
   })
 
   it('should be not be able to edit a answer from another user', async () => {
-    const newAnswer = MakeAnswer(
+    const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityId('author-1'),
       },

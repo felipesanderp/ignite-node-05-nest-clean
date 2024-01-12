@@ -1,5 +1,5 @@
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
-import { MakeAnswer } from 'test/factories/make-answer'
+import { makeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswerCommentsRepository } from 'test/repositories/in-memory-answer-comments-repository'
 import { CommentOnAnswerUseCase } from './comment-on-answer'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
@@ -24,7 +24,7 @@ describe('Comment on Answer', () => {
   })
 
   it('should be able to comment on answer', async () => {
-    const answer = MakeAnswer()
+    const answer = makeAnswer()
 
     await inMemoryAnswersRepository.create(answer)
 
