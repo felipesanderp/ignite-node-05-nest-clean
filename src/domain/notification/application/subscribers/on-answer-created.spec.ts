@@ -10,7 +10,7 @@ import {
   SendNotificationUseCaseResponse,
 } from '../use-cases/send-notification'
 import { InMemoryNotificationsRepository } from 'test/repositories/in-memory-notifications-repository'
-import { MakeQuestion } from 'test/factories/make-question'
+import { makeQuestion } from 'test/factories/make-question'
 import { SpyInstance } from 'vitest'
 import { waitFor } from 'test/utils/wait-for'
 
@@ -49,7 +49,7 @@ describe('On Answer Created', () => {
   })
 
   it('should  send a notification when an answer is created', async () => {
-    const question = MakeQuestion()
+    const question = makeQuestion()
     inMemoryQuestionsRepository.create(question)
 
     const answer = MakeAnswer({ questionId: question.id })
