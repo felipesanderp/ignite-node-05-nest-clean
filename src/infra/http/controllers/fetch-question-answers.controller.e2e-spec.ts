@@ -64,7 +64,7 @@ describe('Fetch question answers (E2E)', () => {
     expect(response.body).toEqual({
       answers: expect.arrayContaining([
         expect.objectContaining({ content: 'Answer 01' }),
-        expect.objectContaining({ content: 'Answer 01' }),
+        expect.objectContaining({ content: 'Answer 02' }),
       ]),
     })
   })
