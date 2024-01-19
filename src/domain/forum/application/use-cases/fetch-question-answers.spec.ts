@@ -10,11 +10,13 @@ let sut: FetchQuestionAnswersUseCase
 
 describe('Fetch Questions Answers', () => {
   beforeEach(() => {
+    inMemoryAnswerAttachmentsRepository =
+      new InMemoryAnswerAttachmentsRepository()
+
     inMemoryAnswersRepository = new InMemoryAnswersRepository(
       inMemoryAnswerAttachmentsRepository,
     )
-    inMemoryAnswerAttachmentsRepository =
-      new InMemoryAnswerAttachmentsRepository()
+
     sut = new FetchQuestionAnswersUseCase(inMemoryAnswersRepository)
   })
 
