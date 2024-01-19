@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import { Either, left, right } from '@/core/either'
 import { QuestionCommentsRepository } from '../repositories/question-comments-repository'
 import { ResourceNotFoundError } from '../../../../core/errors/errors/resource-not-found-error'
@@ -13,7 +11,7 @@ interface DeleteQuestionCommentUseCaseRequest {
 
 type DeleteQuestionCommentUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  {}
+  null
 >
 
 @Injectable()
@@ -37,6 +35,6 @@ export class DeleteQuestionCommentUseCase {
 
     await this.questionCommentsRepository.delete(questionComment)
 
-    return right({})
+    return right(null)
   }
 }

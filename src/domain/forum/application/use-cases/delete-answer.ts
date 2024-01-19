@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import { Either, left, right } from '@/core/either'
 import { AnswersRepository } from '../repositories/answers-repository'
 import { ResourceNotFoundError } from '../../../../core/errors/errors/resource-not-found-error'
@@ -13,7 +11,7 @@ interface DeleteAnswerUseCaseRequest {
 
 type DeleteAnswerUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  {}
+  null
 >
 
 @Injectable()
@@ -36,6 +34,6 @@ export class DeleteAnswerUseCase {
 
     await this.answersRepository.delete(answer)
 
-    return right({})
+    return right(null)
   }
 }
