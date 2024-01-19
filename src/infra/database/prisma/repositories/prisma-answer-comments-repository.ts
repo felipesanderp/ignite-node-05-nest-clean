@@ -5,7 +5,7 @@ import { AnswerComment } from '@/domain/forum/enterprise/entities/answer-comment
 import { PrismaService } from '../prisma.service'
 import { PrismaAnswerCommentMapper } from '../mappers/prisma-answer-comment-mapper'
 
-Injectable()
+@Injectable()
 export class PrismaAnswerCommentsRepository
   implements AnswerCommentsRepository
 {
