@@ -98,7 +98,7 @@ describe('Prisma Questions Repository (E2E)', () => {
 
     const question = await questionFactory.makePrismaQuestion({
       authorId: user.id,
-      slug: Slug.create('slug-test'),
+      slug: Slug.create('slug-test-2'),
     })
 
     const attachment = await attachmentFactory.makePrismaAttachment()
